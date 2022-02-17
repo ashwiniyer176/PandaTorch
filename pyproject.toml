@@ -1,14 +1,21 @@
 [tool.poetry]
 name = "PandaTorch"
-version = "0.1.0"
+version = "1.0.0"
 description = ""
 authors = ["Ashwin Iyer <ashwiniyer1706@gmail.com>"]
+license = "MIT"
+readme = "README.rst"
 
 [tool.poetry.dependencies]
 python = "^3.9"
+pandas = "^1.4.1"
+torch = "^1.10.2"
+
+
 
 [tool.poetry.dev-dependencies]
 pytest = "^5.2"
+pandoc = "^2.1"
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]
