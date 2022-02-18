@@ -16,3 +16,4 @@ A flexible simple library that makes it easier to use the extrememly popular `pa
 <br>
 `torch_df=data.DataFrame(X=df.drop("<Target Column>",axis=1),y=df["<Target Column>"])`
 
+**Note:** Check out the nnotebooks folder for a full end-to-end training example of a tabular dataset using PandaTorch
