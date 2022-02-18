@@ -4,3 +4,16 @@ PandaTorch
 A flexible simple library that makes it easier to use the extrememly
 popular ``pandas`` package with the other extremely popular framework
 ``pytorch``.
+
+Functions
+---------
+
+1. Converts a Pandas DataFrame into a usable PyTorch dataset.
+2. Allows use of all usual Pandas functions
+
+Usage
+-----
+
+``import pandas as pd`` ``from pandatorch import data``
+``df=pd.read_csv("path_to_dataset")``
+``torch_df=data.DataFrame(X=df.drop("<Target Column>",axis=1),y=df["<Target Column>"])``
