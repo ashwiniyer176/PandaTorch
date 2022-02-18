@@ -2,7 +2,7 @@ from pandatorch import __version__, data
 import os
 import pandas as pd
 from torch.utils.data import DataLoader
-import pandoc
+import torch
 
 df = pd.read_csv("tests/IRIS.csv")
 
@@ -40,5 +40,6 @@ def test_dataloader_compatibility():
     assert label is not None
 
 
-test_df_has_all_columns()
-test_dataloader_compatibility()
+def test_targets_torch_integers():
+    targets = torch.tensor(torch_df.target)
+    assert targets.dtype is torch.int64
