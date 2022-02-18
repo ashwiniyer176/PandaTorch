@@ -10,6 +10,7 @@ readme = "README.rst"
 python = "^3.9"
 pandas = "^1.4.1"
 torch = "^1.10.2"
+matplotlib = "^3.5.1"
 
 
 

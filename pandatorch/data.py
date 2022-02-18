@@ -5,7 +5,7 @@ import numpy as np
 
 class DataFrame(Dataset):
     def __init__(self, X, y):
-        self.features = np.array(X)
+        self.features = np.array(X, dtype=np.float32)
         self.target = y
         self.df = pd.concat([X, y], axis=1)
         self.__convert_target_type()
