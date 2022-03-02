@@ -1,6 +1,7 @@
 from torch.utils.data import Dataset
 import pandas as pd
 import numpy as np
+import torch
 
 
 class DataFrame(Dataset):
@@ -26,10 +27,10 @@ class DataFrame(Dataset):
 
     def __getitem__(self, idx):
         if self.get_number_of_columns(self.target) > 1:
-            return self.features[idx, :], self.target[idx, :]
+            return torch.tensor(self.features[idx, :]), torch.tensor(self.target[idx, :])
 
         elif self.get_number_of_columns(self.target) == 1:
-            return self.features[idx, :], self.target[idx]
+            return torch.tensor(self.features[idx, :]), torch.tensor(self.target[idx])
 
     def get_number_of_columns(self, data):
         if(len(data.shape) > 1):
