@@ -1,22 +1,23 @@
 [tool.poetry]
 name = "PandaTorch"
 version = "1.0.0"
-description = ""
+description = "A flexible simple library that makes it easier to use the extrememly popular pandas package with the other extremely popular framework PyTorch. "
 authors = ["Ashwin Iyer <ashwiniyer1706@gmail.com>"]
 license = "MIT"
 readme = "README.rst"
 
+[tool.poe.tasks]
+force-cuda11 = "pip3 install torch==1.10.2+cu113 torchvision==0.11.3+cu113 torchaudio===0.10.2+cu113 -f https://download.pytorch.org/whl/cu113/torch_stable.html"
+
 [tool.poetry.dependencies]
 python = "^3.9"
 pandas = "^1.4.1"
-torch = "^1.10.2"
 matplotlib = "^3.5.1"
-
-
 
 [tool.poetry.dev-dependencies]
 pytest = "^5.2"
 pandoc = "^2.1"
+poethepoet = "^0.13.1"
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]
