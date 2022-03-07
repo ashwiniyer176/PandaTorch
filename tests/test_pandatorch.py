@@ -6,16 +6,15 @@ import torch
 
 df = pd.read_csv("tests/IRIS.csv")
 
-torch_df = data.DataFrame(
-    df.drop(columns=["petal_length", "species"]), df['species'])
+torch_df = data.DataFrame(df.drop(columns=["petal_length", "species"]), df["species"])
 
 
 def update_rst_markdown():
-    os.system('pandoc -s README.md -o README.rst')
+    os.system("pandoc -s README.md -o README.rst")
 
 
 def test_version():
-    assert __version__ == '1.0.0'
+    assert __version__ == "1.0.0"
     update_rst_markdown()
 
 
@@ -30,7 +29,7 @@ def test_df_has_all_columns():
     target_cols = torch_df.get_number_of_columns(torch_df.target)
     df_cols = torch_df.get_number_of_columns(torch_df.df)
     assert target_cols == 1
-    assert feature_cols+target_cols == df_cols
+    assert feature_cols + target_cols == df_cols
 
 
 def test_dataloader_compatibility():

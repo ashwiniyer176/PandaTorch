@@ -27,13 +27,15 @@ class DataFrame(Dataset):
 
     def __getitem__(self, idx):
         if self.get_number_of_columns(self.target) > 1:
-            return torch.tensor(self.features[idx, :]), torch.tensor(self.target[idx, :])
+            return torch.tensor(self.features[idx, :]), torch.tensor(
+                self.target[idx, :]
+            )
 
         elif self.get_number_of_columns(self.target) == 1:
             return torch.tensor(self.features[idx, :]), torch.tensor(self.target[idx])
 
     def get_number_of_columns(self, data):
-        if(len(data.shape) > 1):
+        if len(data.shape) > 1:
             return data.shape[1]
         elif len(data.shape) == 1:
             return 1
