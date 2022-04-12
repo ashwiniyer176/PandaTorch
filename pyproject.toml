@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "PandaTorch"
-version = "1.0.1"
+version = "2.1.0"
 description = "A flexible simple library that makes it easier to use the extrememly popular pandas package with the other extremely popular framework PyTorch. "
 authors = ["Ashwin Iyer <ashwiniyer1706@gmail.com>"]
 license = "MIT"

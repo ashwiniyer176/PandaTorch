@@ -13,11 +13,6 @@ def update_rst_markdown():
     os.system("pandoc -s README.md -o README.rst")
 
 
-def test_version():
-    assert __version__ == "1.0.0"
-    update_rst_markdown()
-
-
 def test_cwd_has_markdown():
     cwd = os.getcwd()
     assert os.path.exists(os.path.join(cwd, "README.rst")) == True
